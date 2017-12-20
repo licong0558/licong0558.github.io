@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="使用hexo搭建的自己的博客,测试上传功能">
+<meta name="description" content="使用hexo搭建的自己的博客,测试上传功能测试公式$$\sum_{i=0}^{l+r} i^2$$">
 <meta name="keywords" content="test">
 <meta property="og:type" content="article">
 <meta property="og:title" content="first blog">
 <meta property="og:url" content="http://yoursite.com/2017/12/20/first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="使用hexo搭建的自己的博客,测试上传功能">
+<meta property="og:description" content="使用hexo搭建的自己的博客,测试上传功能测试公式$$\sum_{i=0}^{l+r} i^2$$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-20T16:02:18.116Z">
+<meta property="og:updated_time" content="2017-12-20T16:32:24.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="first blog">
-<meta name="twitter:description" content="使用hexo搭建的自己的博客,测试上传功能">
+<meta name="twitter:description" content="使用hexo搭建的自己的博客,测试上传功能测试公式$$\sum_{i=0}^{l+r} i^2$$">
 
 
 
@@ -342,7 +342,7 @@
       
 
       
-        <p>使用hexo搭建的自己的博客,测试上传功能</p>
+        <p>使用hexo搭建的自己的博客,测试上传功能<br>测试公式<br>$$\sum_{i=0}^{l+r} i^2$$</p>
 
       
     </div>
@@ -687,6 +687,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
