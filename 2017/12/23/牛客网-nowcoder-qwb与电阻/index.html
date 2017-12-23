@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="#题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 #题解设答案为$R$，运用迭代的思路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$化简即可求得$R$">
+<meta name="description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
 <meta name="keywords" content="思路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="牛客网 nowcoder  qwb与电阻">
 <meta property="og:url" content="http://yoursite.com/2017/12/23/牛客网-nowcoder-qwb与电阻/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 #题解设答案为$R$，运用迭代的思路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$化简即可求得$R$">
+<meta property="og:description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2">
 <meta property="og:image" content="http://yoursite.com/2017/12/23/牛客网-nowcoder-qwb与电阻/r.png">
-<meta property="og:updated_time" content="2017-12-23T10:37:08.624Z">
+<meta property="og:updated_time" content="2017-12-23T10:47:33.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网 nowcoder  qwb与电阻">
-<meta name="twitter:description" content="#题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 #题解设答案为$R$，运用迭代的思路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$化简即可求得$R$">
+<meta name="twitter:description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
 <meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2">
 
 
@@ -345,8 +345,9 @@
       
 
       
-        <p>#题目描述<br>qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。<br><img src="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2" alt=""></p>
-<p>#题解<br><img src="/2017/12/23/牛客网-nowcoder-qwb与电阻/r.png"><br>设答案为$R$，运用迭代的思路，将图化简为如图只有两个并联电路的情况，得出下式<br>$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$<br>化简即可求得$R$</p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。<br><img src="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2" alt=""></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><img src="/2017/12/23/牛客网-nowcoder-qwb与电阻/r.png">
+<p>设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式<br>$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$<br>化简即可求得$R$</p>
 
       
     </div>
@@ -437,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -500,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
