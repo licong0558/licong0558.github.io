@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="#题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 #题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloo">
+<meta name="description" content="题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloor">
 <meta name="keywords" content="ACM,二分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2017年浙江工业大学大学生程序设计迎新赛决赛 F 栗酱的不等式">
 <meta property="og:url" content="https://licong0558.github.io/2017年浙江工业大学大学生程序设计迎新赛决赛-F-栗酱的不等式/index.html">
 <meta property="og:site_name" content="李聪的博客">
-<meta property="og:description" content="#题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 #题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloo">
+<meta property="og:description" content="题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloor">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T08:20:36.274Z">
+<meta property="og:updated_time" content="2017-12-29T08:31:22.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017年浙江工业大学大学生程序设计迎新赛决赛 F 栗酱的不等式">
-<meta name="twitter:description" content="#题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 #题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloo">
+<meta name="twitter:description" content="题目描述有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。 题解观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloor">
 
 
 
@@ -325,8 +325,8 @@
       
 
       
-        <p>#题目描述<br>有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。</p>
-<p>#题解<br>观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloor {n\over x^3} \rfloor$种解数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"set"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"queue"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOP freopen(<span class="meta-string">"input.txt"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Met(x,y) memset(x,y,sizeof x)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ll MAXN = <span class="number">5000</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">p3</span><span class="params">(ll a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a*a*a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    ll m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        ll ans=<span class="number">-1</span>;</span><br><span class="line">        ll l=<span class="number">8</span>,r=INF;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            ll num=<span class="number">0</span>,mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="comment">// printf("%lld %lld %lld\n", l,r,mid);</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;INF &amp;&amp; mid/p3(i);++i)</span><br><span class="line">                num+=mid/p3(i);</span><br><span class="line">            <span class="keyword">if</span>(num==m) ans=mid;</span><br><span class="line">            <span class="keyword">if</span>(num&lt;m) l=mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有不等式 $y\times x^3\le n$ ，已知 $y$ 为正整数，$x$ 为大于1的正整数，问当 $x$ 和 $y$ 的解数量刚好为 $m$ 的时候 $n$ 的最小值，如果不存在输出-1。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>观察到，答案是连续的（即随$m$增大，$n$也增大），同时对某个具体的$n$求出解数很容易，应由此想到二分答案$n$。对每一次二分中的$n$，枚举$x$,对每个$x$,有 $\lfloor {n\over x^3} \rfloor$种解数。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"set"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"queue"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOP freopen(<span class="meta-string">"input.txt"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Met(x,y) memset(x,y,sizeof x)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ll MAXN = <span class="number">5000</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">p3</span><span class="params">(ll a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a*a*a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    ll m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        ll ans=<span class="number">-1</span>;</span><br><span class="line">        ll l=<span class="number">8</span>,r=INF;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">        &#123;</span><br><span class="line">            ll num=<span class="number">0</span>,mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="comment">// printf("%lld %lld %lld\n", l,r,mid);</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;INF &amp;&amp; mid/p3(i);++i)</span><br><span class="line">                num+=mid/p3(i);</span><br><span class="line">            <span class="keyword">if</span>(num==m) ans=mid;</span><br><span class="line">            <span class="keyword">if</span>(num&lt;m) l=mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -368,6 +368,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/魔王的语言/" rel="prev" title="魔王的语言">
+                魔王的语言 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -419,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,7 +448,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -483,6 +496,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -496,7 +525,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
