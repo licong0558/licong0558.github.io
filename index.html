@@ -403,20 +403,18 @@
 </ul>
 </li>
 <li><h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><ul>
-<li><p>c++11新语法遍历</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;kv:a)</span><br><span class="line">&#123;   </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.first;    </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><h2 id="c-11新语法遍历"><a href="#c-11新语法遍历" class="headerlink" title="c++11新语法遍历"></a>c++11新语法遍历</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;kv:a)</span><br><span class="line">&#123;   </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.first;    </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>普通遍历</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = num_map.begin(); it != num_map.end(); ++it) &#123;</span><br><span class="line">       <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="string">", "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><h2 id="普通遍历"><a href="#普通遍历" class="headerlink" title="普通遍历"></a>普通遍历</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = num_map.begin(); it != num_map.end(); ++it) &#123;</span><br><span class="line">       <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="string">", "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1><ul>
-<li><p>排序方法与set相同，但使用<code>.top()</code>函数时返回的是<strong>最右边</strong>的元素。</p>
+<li><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>排序方法与set相同，但使用<code>.top()</code>函数时返回的是<strong>最右边</strong>的元素。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, <span class="built_in">std</span>::greater&lt;<span class="keyword">int</span>&gt; &gt;</span><br></pre></td></tr></table></figure>
 <p>默认同样是左小右大，当需要左大右小是使用上面的语法。</p>
 </li>
-<li>函数<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.top();</span><br><span class="line">.push();</span><br></pre></td></tr></table></figure>
+<li><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.top();</span><br><span class="line">.push();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
