@@ -344,8 +344,12 @@
           
             <p>两道题目运用了类似的思路，因此写在一起总结下。</p>
 <h1 id="HDU-6230"><a href="#HDU-6230" class="headerlink" title="HDU-6230"></a>HDU-6230</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数<br>可以得到以下递推公式<br>$$<br>DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&lt;a[j])<br>$$<br>普通的算法时间复杂度为 $n^3$ ，无法满足要求<br>可以发现这个式子有两个不等式限制<br>$$<br>\begin{cases}<br>i-2&lt;=k&lt;=j-1\<br>a[k]&lt;a[j]<br>\end{cases}<br>$$<br>即可在循环中每次<strong>最后</strong>把 $DP[i-1][j]$ 放入 $Bit[a[j]]$<br>下次循环中$j$增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(a[j])$ 即满足第二个限制（此时 $Bit[a[j]]$ 位还没有放入）</p>
-<p>#HDU-5542<br>前面部分略过不讲，只关注最后不等式部分<br>需要求解有多少 $<i,j>$ 满足<br>$$<br>\begin{cases}<br>i<j\\ p[i]\leq="" j-i\\="" p[j]\leq="" j-i="" \end{cases}="" $$="" 整理成="" \begin{cases}="" i\geq="" j-p[j]\\="" i<j\leq="" i+p[i]="" 每次循环把满足="" $j-p[j]="i$" 的="" $j$="" 放入树状数组(借助`vector<ll=""> g[]`)<br>随循环继续，$i$ 增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(i+p[i])-sum(i)$ 即满足第二个限制</j\\></i,j></p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数<br>可以得到以下递推公式<br>$$<br>DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&lt;a[j])<br>$$<br>普通的算法时间复杂度为 $n^3$ ，无法满足要求<br>可以发现这个式子有两个不等式限制<br>$$<br>\begin{cases}<br>i-2&lt;=k&lt;=j-1 \\<br>a[k]&lt;a[j]<br>\end{cases}<br>$$<br>即可在循环中每次<strong>最后</strong>把 $DP[i-1][j]$ 放入 $Bit[a[j]]$<br>下次循环中$j$增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(a[j])$ 即满足第二个限制（此时 $Bit[a[j]]$ 位还没有放入）</p>
+<h1 id="HDU-5542"><a href="#HDU-5542" class="headerlink" title="HDU-5542"></a>HDU-5542</h1><p>前面部分略过不讲，只关注最后不等式部分<br>需要求解有多少 $i,j$ 满足</p>
+<p>$$<br>\begin{cases}<br>i&lt;j\\<br>p[i]\leq j-i\\<br>p[j]\leq j-i<br>\end{cases}<br>$$</p>
+<p>整理成</p>
+<p>$$<br>\begin{cases}<br>i\geq j-p[j]\\<br>i&lt;j\leq i+p[i]<br>\end{cases}<br>$$</p>
+<p>每次循环把满足 $j-p[j]=i$ 的 $j$ 放入树状数组(借助<code>vector&lt;ll&gt; g[]</code>)<br>随循环继续，$i$ 增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(i+p[i])-sum(i)$ 即满足第二个限制</p>
 
           
         
