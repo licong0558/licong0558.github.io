@@ -4,6 +4,67 @@
 
     
   <url>
+    <loc>https://licong0558.github.io/HDU-2852-%E9%9B%86%E5%90%88%E7%AC%ACk%E5%A4%A7%EF%BC%89/</loc>
+    <lastmod>2018-03-26T04:13:51.088Z</lastmod>
+    <data>
+        <display>
+        <title>HDU-2852(集合第k大）</title>
+        <pubTime>2018-03-26T04:02:45.000Z</pubTime>
+        
+        <tag>树状数组</tag>
+         
+        <tag>二分</tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM" url="https://licong0558.github.io/categories/ACM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://licong0558.github.io/%E5%93%88%E5%B0%94%E6%BB%A8%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%85%AB%E5%B1%8A%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B-D-%E5%B0%8FC%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-03-25T08:15:14.337Z</lastmod>
+    <data>
+        <display>
+        <title>哈尔滨理工大学第八届程序设计竞赛 D-小C的问题</title>
+        <pubTime>2018-03-25T06:33:34.000Z</pubTime>
+        
+        <tag>思路</tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM" url="https://licong0558.github.io/categories/ACM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://licong0558.github.io/%E7%AC%AC13%E5%B1%8A%E5%B9%BF%E4%B8%9C%E5%B7%A5%E4%B8%9A%E5%A4%A7%E5%AD%A6ACM%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B-F-%E7%AD%89%E5%BC%8F/</loc>
+    <lastmod>2018-03-25T06:31:25.764Z</lastmod>
+    <data>
+        <display>
+        <title>第13届广东工业大学ACM程序设计大赛 F-等式</title>
+        <pubTime>2018-03-25T06:19:23.000Z</pubTime>
+        
+        <tag>思维</tag>
+         
+        <tag>数学</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://licong0558.github.io/Codeforces-908D/</loc>
     <lastmod>2018-03-20T05:36:17.854Z</lastmod>
     <data>
@@ -209,9 +270,9 @@
         <title>2017年浙江工业大学大学生程序设计迎新赛决赛 F 栗酱的不等式</title>
         <pubTime>2017-12-28T08:01:15.000Z</pubTime>
         
-        <tag>ACM</tag>
-         
         <tag>二分</tag>
+         
+        <tag>ACM</tag>
          
          
            
