@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://licong0558.github.io/Codeforces-940E/</loc>
+    <lastmod>2018-03-29T03:16:49.247Z</lastmod>
+    <data>
+        <display>
+        <title>Codeforces-940E</title>
+        <pubTime>2018-03-29T02:52:17.000Z</pubTime>
+        
+        <tag>DP</tag>
+         
+         
+           
+             
+              <breadCrumb title="ACM" url="https://licong0558.github.io/categories/ACM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://licong0558.github.io/HDU-2852-%E9%9B%86%E5%90%88%E7%AC%ACk%E5%A4%A7%EF%BC%89/</loc>
     <lastmod>2018-03-26T04:13:51.088Z</lastmod>
     <data>
@@ -11,9 +31,9 @@
         <title>HDU-2852(集合第k大）</title>
         <pubTime>2018-03-26T04:02:45.000Z</pubTime>
         
-        <tag>树状数组</tag>
-         
         <tag>二分</tag>
+         
+        <tag>树状数组</tag>
          
          
            
@@ -72,9 +92,9 @@
         <title>Codeforces -908D</title>
         <pubTime>2018-03-18T13:09:26.000Z</pubTime>
         
-        <tag>思维</tag>
-         
         <tag>DP</tag>
+         
+        <tag>思维</tag>
          
         <tag>概率期望</tag>
          
@@ -270,9 +290,9 @@
         <title>2017年浙江工业大学大学生程序设计迎新赛决赛 F 栗酱的不等式</title>
         <pubTime>2017-12-28T08:01:15.000Z</pubTime>
         
-        <tag>二分</tag>
-         
         <tag>ACM</tag>
+         
+        <tag>二分</tag>
          
          
            

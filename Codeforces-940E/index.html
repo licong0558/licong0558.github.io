@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="思路," />
+  <meta name="keywords" content="DP," />
 
 
 
@@ -79,21 +79,18 @@
 
 
 
-<meta name="description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
-<meta name="keywords" content="思路">
+<meta name="description" content="题解$dp[i]$表示前i个数字组成的最小答案，得到状态转移方程$$dp[i]={min(\\      dp[i-1]+a[i],\\      dp[i-c]+\sum{j=i-c+1}^{i}a[i]-\min{j=i-c+1}^{i}a[i]      \\)}$$维护动态集合（有不停的添加删除元素）的最小值用muiltset 总结解题时要想到枚举思路，dp，二分，贪心等常用思路都要考虑到">
+<meta name="keywords" content="DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="牛客网 nowcoder  qwb与电阻">
-<meta property="og:url" content="https://licong0558.github.io/牛客网-nowcoder-qwb与电阻/index.html">
+<meta property="og:title" content="Codeforces-940E">
+<meta property="og:url" content="https://licong0558.github.io/Codeforces-940E/index.html">
 <meta property="og:site_name" content="李聪的博客">
-<meta property="og:description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
+<meta property="og:description" content="题解$dp[i]$表示前i个数字组成的最小答案，得到状态转移方程$$dp[i]={min(\\      dp[i-1]+a[i],\\      dp[i-c]+\sum{j=i-c+1}^{i}a[i]-\min{j=i-c+1}^{i}a[i]      \\)}$$维护动态集合（有不停的添加删除元素）的最小值用muiltset 总结解题时要想到枚举思路，dp，二分，贪心等常用思路都要考虑到">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2">
-<meta property="og:image" content="https://licong0558.github.io/牛客网-nowcoder-qwb与电阻/r.png">
-<meta property="og:updated_time" content="2017-12-23T10:47:33.975Z">
+<meta property="og:updated_time" content="2018-03-29T03:16:49.247Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="牛客网 nowcoder  qwb与电阻">
-<meta name="twitter:description" content="题目描述qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。 题解 设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式$$R=r_1+r_">
-<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2">
+<meta name="twitter:title" content="Codeforces-940E">
+<meta name="twitter:description" content="题解$dp[i]$表示前i个数字组成的最小答案，得到状态转移方程$$dp[i]={min(\\      dp[i-1]+a[i],\\      dp[i-c]+\sum{j=i-c+1}^{i}a[i]-\min{j=i-c+1}^{i}a[i]      \\)}$$维护动态集合（有不停的添加删除元素）的最小值用muiltset 总结解题时要想到枚举思路，dp，二分，贪心等常用思路都要考虑到">
 
 
 
@@ -123,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://licong0558.github.io/牛客网-nowcoder-qwb与电阻/"/>
+  <link rel="canonical" href="https://licong0558.github.io/Codeforces-940E/"/>
 
 
 
 
 
-  <title>牛客网 nowcoder  qwb与电阻 | 李聪的博客</title>
+  <title>Codeforces-940E | 李聪的博客</title>
   
 
 
@@ -256,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/牛客网-nowcoder-qwb与电阻/">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-940E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李聪">
@@ -273,7 +270,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">牛客网 nowcoder  qwb与电阻</h2>
+          <h2 class="post-title" itemprop="name headline">Codeforces-940E</h2>
         
 
         <div class="post-meta">
@@ -285,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-23T17:49:55+08:00">
-                2017-12-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T10:52:17+08:00">
+                2018-03-29
               </time>
             
 
@@ -350,9 +347,9 @@
       
 
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>qwb闲着无聊，就开始拆自己的电脑，他发现主板上某个元件可以视作如图所示无限长的电路。已知该电路由三种不同的电阻r1,r2,r3构成，他想要计算ab之间的电阻。<br><img src="https://uploadfiles.nowcoder.com/images/20171221/303650_1513863489838_3314D95EDEBAA859476B4ED27F723DB2" alt=""></p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><img src="/牛客网-nowcoder-qwb与电阻/r.png">
-<p>设答案为$R$，因为图中电路是无限延伸的，去掉最左边的$r_1,r_2,r_3$，电路还是不变的。因此把除了最左边$r_1,r_2,r_3$的电路当作原电路，将图化简为如图只有两个并联电路的情况，得出下式<br>$$R=r_1+r_3+{ {R*r_2}\over{R+r_2} }$$<br>化简即可求得$R$</p>
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>$dp[i]$表示前i个数字组成的最小答案，得到状态转移方程<br>$$<br>dp[i]={min(\\<br>      dp[i-1]+a[i],\\<br>      dp[i-c]+\sum<em>{j=i-c+1}^{i}a[i]-\min</em>{j=i-c+1}^{i}a[i]<br>      \\)}<br>$$<br>维护动态集合（有不停的添加删除元素）的最小值用<code>muiltset</code></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>解题时要想到枚举思路，dp，二分，贪心等常用思路都要考虑到。当确定$dp[i]$的意义后，要大胆的写出方程。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOP freopen(<span class="meta-string">"input.txt"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Met(x,y) memset(x,y,sizeof x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> L index*2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R index*2+1</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">1e6</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">ll arr[MAXN];</span><br><span class="line">ll dp[MAXN];</span><br><span class="line">ll sum[MAXN];</span><br><span class="line"><span class="built_in">multiset</span>&lt;ll&gt; se;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    ll n,c;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;c) &#123;</span><br><span class="line">        se.clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;arr[i]);</span><br><span class="line">        sum[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">            sum[i]=sum[i<span class="number">-1</span>]+arr[i];</span><br><span class="line">        dp[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;c;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i]=dp[i<span class="number">-1</span>]+arr[i];</span><br><span class="line">            se.insert(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=c;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            se.insert(arr[i]);</span><br><span class="line">            dp[i]=min(dp[i<span class="number">-1</span>]+arr[i],dp[i-c]+sum[i]-sum[i-c]-*(se.begin()));</span><br><span class="line">            se.erase(se.find(arr[i-c+<span class="number">1</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;dp[n]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -370,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/思路/" rel="tag"># 思路</a>
+            <a href="/tags/DP/" rel="tag"># DP</a>
           
         </div>
       
@@ -383,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hihocoder-1636-2017-ICPC-beijing-J/" rel="next" title="hihocoder 1636 2017 ICPC beijing J">
-                <i class="fa fa-chevron-left"></i> hihocoder 1636 2017 ICPC beijing J
+              <a href="/HDU-2852-集合第k大）/" rel="next" title="HDU-2852(集合第k大）">
+                <i class="fa fa-chevron-left"></i> HDU-2852(集合第k大）
               </a>
             
           </div>
@@ -392,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/湖南大学ACM程序设计新生杯大赛-赛后总结/" rel="prev" title="湖南大学ACM程序设计新生杯大赛 赛后总结">
-                湖南大学ACM程序设计新生杯大赛 赛后总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
