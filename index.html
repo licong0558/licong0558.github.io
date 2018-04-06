@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 <meta name="google-site-verification" content="ythB7aQvX9Nnf_qUKoXMA203Qmf4-bZOur4IXTtGb6Q" />
-
+<link href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -235,6 +235,151 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/第13届景驰-埃森哲杯广东工业大学ACM程序设计大赛-C-平分游戏/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李聪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李聪的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/第13届景驰-埃森哲杯广东工业大学ACM程序设计大赛-C-平分游戏/" itemprop="url">第13届景驰-埃森哲杯广东工业大学ACM程序设计大赛 C-平分游戏</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T14:37:52+08:00">
+                2018-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>首先应该想到，同学们会被划分成$gcd(n,k+1)$个集合，同一个集合内的同学之间才能互相交换硬币。对每个集合，问题被化简成如下情况。<br>$\require{AMScd}$<br>$$<br>\begin{CD}<br>    a_0 @&gt;x_0&gt;&gt; a_1\\<br>    @A x_3 A A @VV x_1 V\\<br>    a_3 @&lt;&lt;x_2&lt; a_2<br>\end{CD}<br>$$<br>其中$x$表示按箭头方向传递硬币的数量，为负代表按与箭头相反的方向传递硬币。<br>环状方程问题应想到当确定一个变量时，其他所有变量都可得出<br>设$x_0$为常量,$avg$为每个人最后应拥有的硬币<br>得出方程<br>$$<br>a_1+x_0-x_1=avg \\ x_1=-avg+a_1+x_0<br>$$<br>$$<br>a_2+x_1-x_2=avg<br>$$<br>带入$x_1$<br>$$<br>x_2=-2avg+a_1+a_2+x_0<br>$$<br>以此类推得到公式<br>$$x_i=-i*avg+\sum_{j=1}^i a_j+x_0 $$</p>
+<p>答案需要求总移动次数 $\sum_{i=0}^{n-1}|x_i|$<br>而</p>
+<p>$$<br>|x_i|=|i*avg-\sum_{j=1}^i a_i-x_0|$$</p>
+<p>相当于在数轴上求一点 $x_0$ 使其到各点 $i*avg-\sum_{j=1}^ia_i$ 的距离之和最小<br>排序之后求中位数即可</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1502,155 +1647,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李聪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="李聪的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/" itemprop="url">HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T10:51:20+08:00">
-                2018-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>两道题目运用了类似的思路，因此写在一起总结下。</p>
-<h1 id="HDU-6230"><a href="#HDU-6230" class="headerlink" title="HDU-6230"></a>HDU-6230</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数<br>可以得到以下递推公式<br>$$<br>DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&lt;a[j])<br>$$<br>普通的算法时间复杂度为 $n^3$ ，无法满足要求<br>可以发现这个式子有两个不等式限制<br>$$<br>\begin{cases}<br>i-2&lt;=k&lt;=j-1 \\<br>a[k]&lt;a[j]<br>\end{cases}<br>$$<br>即可在循环中每次<strong>最后</strong>把 $DP[i-1][j]$ 放入 $Bit[a[j]]$<br>下次循环中$j$增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(a[j])$ 即满足第二个限制（此时 $Bit[a[j]]$ 位还没有放入）</p>
-<h1 id="HDU-5542"><a href="#HDU-5542" class="headerlink" title="HDU-5542"></a>HDU-5542</h1><p>前面部分略过不讲，只关注最后不等式部分<br>需要求解有多少 $i,j$ 满足</p>
-<p>$$<br>\begin{cases}<br>i&lt;j\\<br>p[i]\leq j-i\\<br>p[j]\leq j-i<br>\end{cases}<br>$$</p>
-<p>整理成</p>
-<p>$$<br>\begin{cases}<br>i\geq j-p[j]\\<br>i&lt;j\leq i+p[i]<br>\end{cases}<br>$$</p>
-<p>每次循环把满足 $j-p[j]=i$ 的 $j$ 放入树状数组(借助<code>vector&lt;ll&gt; g[]</code>)<br>随循环继续，$i$ 增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(i+p[i])-sum(i)$ 即满足第二个限制</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1701,7 +1697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1723,7 +1719,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
