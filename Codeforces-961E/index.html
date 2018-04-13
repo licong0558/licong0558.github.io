@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="BIT,DP," />
+  <meta name="keywords" content="BIT," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="两道题目运用了类似的思路，因此写在一起总结下。 HDU-6230题目大意给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。 解题思路设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数可以得到以下递推公式$$DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&amp;lt;a[j])$">
-<meta name="keywords" content="BIT,DP">
+<meta name="description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
+<meta name="keywords" content="BIT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题">
-<meta property="og:url" content="https://licong0558.github.io/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/index.html">
+<meta property="og:title" content="Codeforces-961E">
+<meta property="og:url" content="https://licong0558.github.io/Codeforces-961E/index.html">
 <meta property="og:site_name" content="李聪的博客">
-<meta property="og:description" content="两道题目运用了类似的思路，因此写在一起总结下。 HDU-6230题目大意给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。 解题思路设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数可以得到以下递推公式$$DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&amp;lt;a[j])$">
+<meta property="og:description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-29T04:46:12.757Z">
+<meta property="og:updated_time" content="2018-04-13T14:11:34.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题">
-<meta name="twitter:description" content="两道题目运用了类似的思路，因此写在一起总结下。 HDU-6230题目大意给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。 解题思路设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数可以得到以下递推公式$$DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&amp;lt;a[j])$">
+<meta name="twitter:title" content="Codeforces-961E">
+<meta name="twitter:description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://licong0558.github.io/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/"/>
+  <link rel="canonical" href="https://licong0558.github.io/Codeforces-961E/"/>
 
 
 
 
 
-  <title>HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题 | 李聪的博客</title>
+  <title>Codeforces-961E | 李聪的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-961E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李聪">
@@ -270,7 +270,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题</h2>
+          <h2 class="post-title" itemprop="name headline">Codeforces-961E</h2>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T10:51:20+08:00">
-                2018-02-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T21:16:23+08:00">
+                2018-04-13
               </time>
             
 
@@ -347,14 +347,9 @@
       
 
       
-        <p>两道题目运用了类似的思路，因此写在一起总结下。</p>
-<h1 id="HDU-6230"><a href="#HDU-6230" class="headerlink" title="HDU-6230"></a>HDU-6230</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。</p>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数<br>可以得到以下递推公式<br>$$<br>DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&lt;a[j])<br>$$<br>普通的算法时间复杂度为 $n^3$ ，无法满足要求<br>可以发现这个式子有两个不等式限制<br>$$<br>\begin{cases}<br>i-2&lt;=k&lt;=j-1 \\<br>a[k]&lt;a[j]<br>\end{cases}<br>$$<br>即可在循环中每次<strong>最后</strong>把 $DP[i-1][j]$ 放入 $Bit[a[j]]$<br>下次循环中$j$增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(a[j])$ 即满足第二个限制（此时 $Bit[a[j]]$ 位还没有放入）</p>
-<h1 id="HDU-5542"><a href="#HDU-5542" class="headerlink" title="HDU-5542"></a>HDU-5542</h1><p>前面部分略过不讲，只关注最后不等式部分<br>需要求解有多少 $i,j$ 满足</p>
-<p>$$<br>\begin{cases}<br>i&lt;j\\<br>p[i]\leq j-i\\<br>p[j]\leq j-i<br>\end{cases}<br>$$</p>
-<p>整理成</p>
-<p>$$<br>\begin{cases}<br>i\geq j-p[j]\\<br>i&lt;j\leq i+p[i]<br>\end{cases}<br>$$</p>
-<p>每次循环把满足 $j-p[j]=i$ 的 $j$ 放入树状数组(借助<code>vector&lt;ll&gt; g[]</code>)<br>随循环继续，$i$ 增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(i+p[i])-sum(i)$ 即满足第二个限制</p>
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 <strong>树状数组解决两个不等式限制问题</strong> ，因此写篇题解纪念一下<br>设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&lt;j$)满足题目条件，则需满足三个条件<br>$$<br>\begin{cases}<br>i&lt;j\\a[j]\ge i\\a[i]\ge j<br>\end{cases}<br>\implies<br>\begin{cases}<br>j\le min(a[i],i-1) \\ a[j]\ge i<br>\end{cases}<br>$$<br>化简后变为两个条件<br>从1到n循环<br>每轮循环更新<code>update(i,1)</code>，这样树状数组中每个为1的点都代表一个$j$<br>同时<code>de[a[i]].push_back(i)</code>，这样当$i$递增到$a[i]$时，下轮循环$i$递增不再满足$a[j]\ge i$，此时<code>de[i]</code>中有应该删除的$j$点，对这些点<code>update(j,-1)</code>即可保证树状数组中的点都满足第二个条件。<br>再通过<code>sum(min(a[i],i-1))</code>完成对第一个条件的限制，可求得同时满足两个条件的$j$点的个数,问题得解。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">2e5</span>+<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">ll BIT[MAXN];</span><br><span class="line"><span class="function">ll <span class="title">Lowbit</span><span class="params">(ll x)</span>  <span class="comment">// 2^k</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(ll i, ll x)</span><span class="comment">//i点增量为x</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;MAXN)</span><br><span class="line">    &#123;</span><br><span class="line">        BIT[i] += x;</span><br><span class="line">        i += Lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll x)</span><span class="comment">//区间求和 [1,x]</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=BIT[x];</span><br><span class="line">        x-=Lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; de[MAXN];</span><br><span class="line">ll a[MAXN],show[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen("input.txt","r",stdin);</span></span><br><span class="line">    ll n;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    ll up=<span class="number">2e5</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(BIT,<span class="number">0</span>,<span class="keyword">sizeof</span> BIT);</span><br><span class="line">    <span class="built_in">memset</span>(show,<span class="number">0</span>,<span class="keyword">sizeof</span> show);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;i)update(i,<span class="number">1</span>);</span><br><span class="line">        show[i]++;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">1</span>)</span><br><span class="line">            ans+=sum(min(i<span class="number">-1L</span>L,a[i]));</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;i &amp;&amp; a[i]&lt;MAXN)de[a[i]].push_back(i);</span><br><span class="line">        <span class="keyword">for</span>(ll v:de[i])</span><br><span class="line">            update(v,<span class="number">-1</span>),show[v]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="其他总结的“树状数组满足两个不等式限制问题”的题解"><a href="#其他总结的“树状数组满足两个不等式限制问题”的题解" class="headerlink" title="其他总结的“树状数组满足两个不等式限制问题”的题解"></a>其他总结的“树状数组满足两个不等式限制问题”的题解</h1><p><a href="https://licong0558.github.io/ZOJ-4008-Yet-Another-Tree-Query-Problem/">ZOJ 4008 Yet Another Tree Query Problem</a><br><a href="https://licong0558.github.io/HDU-6230-HDU-5542-%E5%88%A9%E7%94%A8%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%AD%89%E5%BC%8F%E9%99%90%E5%88%B6%E7%9A%84%E9%97%AE%E9%A2%98/">HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题</a></p>
 
       
     </div>
@@ -374,8 +369,6 @@
           
             <a href="/tags/BIT/" rel="tag"># BIT</a>
           
-            <a href="/tags/DP/" rel="tag"># DP</a>
-          
         </div>
       
 
@@ -387,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/C-的几种常用STL的用法-map-set-priority-queue/" rel="next" title="C++的几种常用STL的用法,map,set,priority_queue">
-                <i class="fa fa-chevron-left"></i> C++的几种常用STL的用法,map,set,priority_queue
+              <a href="/Codeforces-961D/" rel="next" title="Codeforces-961D">
+                <i class="fa fa-chevron-left"></i> Codeforces-961D
               </a>
             
           </div>
@@ -396,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/排列组合n球放m盒问题/" rel="prev" title="排列组合n球放m盒问题">
-                排列组合n球放m盒问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,7 +522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HDU-6230"><span class="nav-number">1.</span> <span class="nav-text">HDU-6230</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题思路"><span class="nav-number">1.2.</span> <span class="nav-text">解题思路</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HDU-5542"><span class="nav-number">2.</span> <span class="nav-text">HDU-5542</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他总结的“树状数组满足两个不等式限制问题”的题解"><span class="nav-number">3.</span> <span class="nav-text">其他总结的“树状数组满足两个不等式限制问题”的题解</span></a></li></ol></div>
             
 
           </div>
