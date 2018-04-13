@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="BIT,思维," />
+  <meta name="keywords" content="思维,BIT," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="题意给一颗树，q个询问，每个询问求节点标号$[l,r]$之间的节点组成的连通块的个数。 题解首先这个图是一棵树，$[l,r]$连通块的个数就是$r-l+1-e$($e$为两点标号都在$[l,r]$的边的个数)把每条边编号大的点放入树状数组。然后把询问按$l$从小到大排序。之后从1到n枚举左端点，每轮循环最后把左端点在$i$的边从树状数组中删除。这样树状数组中的边的左端点总是大于$i$，因此当i枚举">
-<meta name="keywords" content="BIT,思维">
+<meta name="keywords" content="思维,BIT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZOJ 4008 Yet Another Tree Query Problem">
 <meta property="og:url" content="https://licong0558.github.io/ZOJ-4008-Yet-Another-Tree-Query-Problem/index.html">
@@ -368,9 +368,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/BIT/" rel="tag"># BIT</a>
-          
             <a href="/tags/思维/" rel="tag"># 思维</a>
+          
+            <a href="/tags/BIT/" rel="tag"># BIT</a>
           
         </div>
       
