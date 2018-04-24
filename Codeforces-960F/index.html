@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
+<meta name="description" content="题解对每个节点开一个树状数组维护前缀最大值(即区间$[1,n]$的最大值)BIT[i][j]表示存在一条指向$i$点的路径，路径中最后一个边的权值为$j$那么对每条边$u,v,w$，查询指向$i$的路径中，最大权值不超过$w-1$，长度最大的路径的长度（即BIT[u][w-1]），再加一即为以$v$结尾，最大权值为$w$的路径的长度，同时把这个值更新到BIT[v][w]中，因为是按读入边的顺序处理">
 <meta name="keywords" content="BIT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces-961E">
-<meta property="og:url" content="https://licong0558.github.io/Codeforces-961E/index.html">
+<meta property="og:title" content="Codeforces-960F">
+<meta property="og:url" content="https://licong0558.github.io/Codeforces-960F/index.html">
 <meta property="og:site_name" content="李聪的博客">
-<meta property="og:description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
+<meta property="og:description" content="题解对每个节点开一个树状数组维护前缀最大值(即区间$[1,n]$的最大值)BIT[i][j]表示存在一条指向$i$点的路径，路径中最后一个边的权值为$j$那么对每条边$u,v,w$，查询指向$i$的路径中，最大权值不超过$w-1$，长度最大的路径的长度（即BIT[u][w-1]），再加一即为以$v$结尾，最大权值为$w$的路径的长度，同时把这个值更新到BIT[v][w]中，因为是按读入边的顺序处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-13T14:11:34.877Z">
+<meta property="og:updated_time" content="2018-04-24T13:33:27.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces-961E">
-<meta name="twitter:description" content="题解一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 树状数组解决两个不等式限制问题 ，因此写篇题解纪念一下设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&amp;lt;j$)满足题目条件，则需满足三个条件$$\begin{cases}i&amp;lt;j\\a[j]\ge i\\a[i]\ge j\end{cases}\implies\begin{cases}j\">
+<meta name="twitter:title" content="Codeforces-960F">
+<meta name="twitter:description" content="题解对每个节点开一个树状数组维护前缀最大值(即区间$[1,n]$的最大值)BIT[i][j]表示存在一条指向$i$点的路径，路径中最后一个边的权值为$j$那么对每条边$u,v,w$，查询指向$i$的路径中，最大权值不超过$w-1$，长度最大的路径的长度（即BIT[u][w-1]），再加一即为以$v$结尾，最大权值为$w$的路径的长度，同时把这个值更新到BIT[v][w]中，因为是按读入边的顺序处理">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://licong0558.github.io/Codeforces-961E/"/>
+  <link rel="canonical" href="https://licong0558.github.io/Codeforces-960F/"/>
 
 
 
 
 
-  <title>Codeforces-961E | 李聪的博客</title>
+  <title>Codeforces-960F | 李聪的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-961E/">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-960F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李聪">
@@ -270,7 +270,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Codeforces-961E</h2>
+          <h2 class="post-title" itemprop="name headline">Codeforces-960F</h2>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T21:16:23+08:00">
-                2018-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-24T20:58:24+08:00">
+                2018-04-24
               </time>
             
 
@@ -347,9 +347,8 @@
       
 
       
-        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一般自己能独立做出的题目是不写题解的，但是这是我第一道独立做出的自己总结的 <strong>树状数组解决两个不等式限制问题</strong> ，因此写篇题解纪念一下<br>设输入数据为$a_1····a_n$,若一个$(i,j)$对(设$i&lt;j$)满足题目条件，则需满足三个条件<br>$$<br>\begin{cases}<br>i&lt;j\\a[j]\ge i\\a[i]\ge j<br>\end{cases}<br>\implies<br>\begin{cases}<br>j\le min(a[i],i-1) \\ a[j]\ge i<br>\end{cases}<br>$$<br>化简后变为两个条件<br>从1到n循环<br>每轮循环更新<code>update(i,1)</code>，这样树状数组中每个为1的点都代表一个$j$<br>同时<code>de[a[i]].push_back(i)</code>，这样当$i$递增到$a[i]$时，下轮循环$i$递增不再满足$a[j]\ge i$，此时<code>de[i]</code>中有应该删除的$j$点，对这些点<code>update(j,-1)</code>即可保证树状数组中的点都满足第二个条件。<br>再通过<code>sum(min(a[i],i-1))</code>完成对第一个条件的限制，可求得同时满足两个条件的$j$点的个数,问题得解。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">2e5</span>+<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">ll BIT[MAXN];</span><br><span class="line"><span class="function">ll <span class="title">Lowbit</span><span class="params">(ll x)</span>  <span class="comment">// 2^k</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(ll i, ll x)</span><span class="comment">//i点增量为x</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;MAXN)</span><br><span class="line">    &#123;</span><br><span class="line">        BIT[i] += x;</span><br><span class="line">        i += Lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll x)</span><span class="comment">//区间求和 [1,x]</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=BIT[x];</span><br><span class="line">        x-=Lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; de[MAXN];</span><br><span class="line">ll a[MAXN],show[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen("input.txt","r",stdin);</span></span><br><span class="line">    ll n;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    ll up=<span class="number">2e5</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(BIT,<span class="number">0</span>,<span class="keyword">sizeof</span> BIT);</span><br><span class="line">    <span class="built_in">memset</span>(show,<span class="number">0</span>,<span class="keyword">sizeof</span> show);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;i)update(i,<span class="number">1</span>);</span><br><span class="line">        show[i]++;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">1</span>)</span><br><span class="line">            ans+=sum(min(i<span class="number">-1L</span>L,a[i]));</span><br><span class="line">        <span class="keyword">if</span>(a[i]&gt;i &amp;&amp; a[i]&lt;MAXN)de[a[i]].push_back(i);</span><br><span class="line">        <span class="keyword">for</span>(ll v:de[i])</span><br><span class="line">            update(v,<span class="number">-1</span>),show[v]--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="其他总结的“树状数组满足两个不等式限制问题”的题解"><a href="#其他总结的“树状数组满足两个不等式限制问题”的题解" class="headerlink" title="其他总结的“树状数组满足两个不等式限制问题”的题解"></a>其他总结的“树状数组满足两个不等式限制问题”的题解</h1><p><a href="https://licong0558.github.io/ZOJ-4008-Yet-Another-Tree-Query-Problem/">ZOJ 4008 Yet Another Tree Query Problem</a><br><a href="https://licong0558.github.io/HDU-6230-HDU-5542-%E5%88%A9%E7%94%A8%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%AD%89%E5%BC%8F%E9%99%90%E5%88%B6%E7%9A%84%E9%97%AE%E9%A2%98/">HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题</a></p>
+        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>对每个节点开一个树状数组维护前缀最大值(即区间$[1,n]$的最大值)<br><code>BIT[i][j]</code>表示存在一条指向$i$点的路径，路径中最后一个边的权值为$j$<br>那么对每条边$u,v,w$，查询指向$i$的路径中，最大权值不超过$w-1$，长度最大的路径的长度（即<code>BIT[u][w-1]</code>），再加一即为以$v$结尾，最大权值为$w$的路径的长度，同时把这个值更新到<code>BIT[v][w]</code>中，因为是按读入边的顺序处理的，所以可以满足边的编号递增的条件，查询的最大值即为答案。<br>注意直接开所有的树状数组内存是不够的，使用<code>map</code>就可以了</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4 24</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOP freopen(<span class="meta-string">"input.txt"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> R index*2+1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Met(x,y) memset(x,y,sizeof x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> L index*2</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN =<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll INF = <span class="number">1e18</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;ll,ll&gt; BIT[MAXN];</span><br><span class="line"><span class="function">ll <span class="title">Lowbit</span><span class="params">(ll x)</span>  <span class="comment">// 2^k</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(ll id,ll i, ll x)</span><span class="comment">//i点增量为x</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    i++;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;MAXN)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// if(id==2 &amp;&amp; i==1)</span></span><br><span class="line">        <span class="comment">//     printf("BIT[2][1]:%lld\n",BIT[2][1]);</span></span><br><span class="line">        BIT[id][i] = max(BIT[id][i],x);</span><br><span class="line">        <span class="comment">// if(id==2 &amp;&amp; i==1)</span></span><br><span class="line">        <span class="comment">//     printf("BIT[2][1]:%lld\n",BIT[2][1]);</span></span><br><span class="line">        i += Lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">bmax</span><span class="params">(ll id,ll x)</span><span class="comment">//区间求和 [1,x]</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x++;</span><br><span class="line">    ll ret=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(BIT[id].count(x))</span><br><span class="line">            ret=max(ret,BIT[id][x]);</span><br><span class="line">        x-=Lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen("input.txt","r",stdin);</span></span><br><span class="line">    ll n,m;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ll u,v,w;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">        ll cur=bmax(u,w<span class="number">-1</span>)+<span class="number">1</span>;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">        update(v,w,cur);</span><br><span class="line">        ans=max(ans,cur);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -380,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Codeforces-961D/" rel="next" title="Codeforces-961D">
-                <i class="fa fa-chevron-left"></i> Codeforces-961D
+              <a href="/Codeforces-960E/" rel="next" title="Codeforces-960E">
+                <i class="fa fa-chevron-left"></i> Codeforces-960E
               </a>
             
           </div>
@@ -389,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/HDU-6266/" rel="prev" title="HDU-6266">
-                HDU-6266 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +521,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他总结的“树状数组满足两个不等式限制问题”的题解"><span class="nav-number">3.</span> <span class="nav-text">其他总结的“树状数组满足两个不等式限制问题”的题解</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
