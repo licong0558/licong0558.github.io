@@ -249,6 +249,680 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-912D-Fishes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李聪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李聪的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Codeforces-912D-Fishes/" itemprop="url">Codeforces 912D Fishes</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T13:12:00+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>靠中间的位置自然是最好的，可以用一个函数计算出一个位置对答案的贡献。建立一个按贡献排序的优先队列，先把最中间的位置放入。<br>然后进行取出，每取出一个，就把它相邻且没有放入过的元素放入优先队列，这样取出k个，就是最优的k个。<br>自己想的直接按贡献大小分类实现过于复杂，应把计算量交给电脑来做，想出逻辑简单，易于实现的算法。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"cstring"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdlib.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"map"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"string"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"set"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"queue"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"list"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"vector"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"algorithm"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOP freopen(<span class="meta-string">"input.txt"</span>,<span class="meta-string">"r"</span>,stdin)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Met(x,y) memset(x,y,sizeof x)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">2e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">gridc</span>&#123;</span></span><br><span class="line">    ll x,y;</span><br><span class="line">    ll ct;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> gridc &amp;a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ct&lt;a.ct;</span><br><span class="line">    &#125;</span><br><span class="line">    gridc(ll xx,ll yy,ll cct):x(xx),y(yy),ct(cct)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">ll p,q,n,m,k;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">grid</span>&#123;</span></span><br><span class="line">    ll x,y;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> grid &amp;a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x*(ll)<span class="number">1e5</span>+y&lt;a.x*(ll)<span class="number">1e5</span>+a.y;</span><br><span class="line">    &#125;</span><br><span class="line">    grid(ll xx,ll yy):x(xx),y(yy)&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">ll <span class="title">getct</span><span class="params">(ll x,ll y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ax,ay,bx,by;</span><br><span class="line">    ax=max(<span class="number">0L</span>L,x-p+<span class="number">1</span>);</span><br><span class="line">    ay=max(<span class="number">0L</span>L,y-q+<span class="number">1</span>);</span><br><span class="line">    bx=min(n-q,x);</span><br><span class="line">    by=min(m-q,y);</span><br><span class="line">    <span class="keyword">return</span> (bx-ax+<span class="number">1</span>)*(by-ay+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;gridc&gt; pq;</span><br><span class="line"><span class="built_in">set</span>&lt;grid&gt; vis;</span><br><span class="line">ll dir[<span class="number">4</span>][<span class="number">2</span>]=&#123;<span class="number">-1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// FOP;</span></span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;p&gt;&gt;k;</span><br><span class="line">    q=p;</span><br><span class="line">    pq.push(gridc(n/<span class="number">2</span>,m/<span class="number">2</span>,getct(n/<span class="number">2</span>,m/<span class="number">2</span>)));</span><br><span class="line">    vis.insert(grid(n/<span class="number">2</span>,m/<span class="number">2</span>));</span><br><span class="line">    ll tct=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        tct+=pq.top().ct;</span><br><span class="line">        gridc cur=pq.top();</span><br><span class="line">        pq.pop();</span><br><span class="line">        <span class="comment">// printf("x=%lld y=%lld ct=%lld\n",cur.x,cur.y,cur.ct);</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            ll nx=cur.x+dir[j][<span class="number">0</span>],ny=cur.y+dir[j][<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(nx&lt;<span class="number">0</span> || nx&gt;=n || ny&lt;<span class="number">0</span> || ny&gt;=m || vis.count(grid(nx,ny))) <span class="keyword">continue</span>;</span><br><span class="line">            vis.insert(grid(nx,ny));</span><br><span class="line">            <span class="comment">// printf("nx=%lld ny=%lld ct=%lld\n", nx,ny,getct(nx,ny));</span></span><br><span class="line">            pq.push(gridc(nx,ny,getct(nx,ny)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.10lf"</span>,(<span class="keyword">double</span>)tct/((n-p+<span class="number">1</span>)*(m-p+<span class="number">1</span>)));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/排列组合n球放m盒问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李聪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李聪的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/排列组合n球放m盒问题/" itemprop="url">排列组合n球放m盒问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T18:49:19+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="球同，盒不同，没有空盒"><a href="#球同，盒不同，没有空盒" class="headerlink" title="球同，盒不同，没有空盒"></a>球同，盒不同，没有空盒</h1><p>把 $n$ 个球排成一排，它们中间有 $n-1$ 个空。取 $m-1$ 个板，放到空上，就把它们分成 $m$ 部分，由于板不相邻，所以没有空盒。它的方法数有 $$C_{n-1}^{m-1}$$</p>
+<h1 id="球同，盒不同，可以有空盒"><a href="#球同，盒不同，可以有空盒" class="headerlink" title="球同，盒不同，可以有空盒"></a>球同，盒不同，可以有空盒</h1><p>在上个问题的基础上，假设把 $n+m$ 个球放到 $m$ 个盒子里没有空盒，再从每个盒子里拿走一个球，就是可以有空盒的情况，它的方法数有 $$C_{n+m-1}^{m-1}$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李聪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李聪的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/HDU-6230-HDU-5542-利用树状数组解决两个不等式限制的问题/" itemprop="url">HDU-6230 HDU-5542 利用树状数组解决两个不等式限制的问题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T10:51:20+08:00">
+                2018-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>两道题目运用了类似的思路，因此写在一起总结下。</p>
+<h1 id="HDU-6230"><a href="#HDU-6230" class="headerlink" title="HDU-6230"></a>HDU-6230</h1><h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出长度为n的序列，问这个序列中有多少个长度为m的单调递增子序列。</p>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>设 $DP[i][j]$ 表示长度为 $i$ ,最后一位为 $a[j]$ 的字符串个数<br>可以得到以下递推公式<br>$$<br>DP[i][j]=\sum_{k=i-2}^{j-1} DP[i-1][k]\space\space\space(a[k]&lt;a[j])<br>$$<br>普通的算法时间复杂度为 $n^3$ ，无法满足要求<br>可以发现这个式子有两个不等式限制<br>$$<br>\begin{cases}<br>i-2&lt;=k&lt;=j-1 \\<br>a[k]&lt;a[j]<br>\end{cases}<br>$$<br>即可在循环中每次<strong>最后</strong>把 $DP[i-1][j]$ 放入 $Bit[a[j]]$<br>下次循环中$j$增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(a[j])$ 即满足第二个限制（此时 $Bit[a[j]]$ 位还没有放入）</p>
+<h1 id="HDU-5542"><a href="#HDU-5542" class="headerlink" title="HDU-5542"></a>HDU-5542</h1><p>前面部分略过不讲，只关注最后不等式部分<br>需要求解有多少 $i,j$ 满足</p>
+<p>$$<br>\begin{cases}<br>i&lt;j\\<br>p[i]\leq j-i\\<br>p[j]\leq j-i<br>\end{cases}<br>$$</p>
+<p>整理成</p>
+<p>$$<br>\begin{cases}<br>i\geq j-p[j]\\<br>i&lt;j\leq i+p[i]<br>\end{cases}<br>$$</p>
+<p>每次循环把满足 $j-p[j]=i$ 的 $j$ 放入树状数组(借助<code>vector&lt;ll&gt; g[]</code>)<br>随循环继续，$i$ 增大，此时树状数组中的元素都满足第一个限制<br>在每次查询中求 $sum(i+p[i])-sum(i)$ 即满足第二个限制</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/C-的几种常用STL的用法-map-set-priority-queue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="李聪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="李聪的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/C-的几种常用STL的用法-map-set-priority-queue/" itemprop="url">C++的几种常用STL的用法,map,set,priority_queue</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-07T16:05:59+08:00">
+                2018-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ACM/" itemprop="url" rel="index">
+                    <span itemprop="name">ACM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>网上类似的博客有很多，我写这个博客主要是为了帮助自己和大家记住STL这几个容器相关的语法</p>
+<ul>
+<li><h1 id="结构体的排序"><a href="#结构体的排序" class="headerlink" title="结构体的排序"></a>结构体的排序</h1><ul>
+<li><p>这三个容器都要求其中的元素可以排序，当插入元素为结构体时，需要通过重载运算符为结构体自定义排序方法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">S</span>&#123;</span></span><br><span class="line">    ll id,v;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt; (<span class="keyword">const</span> S &amp;a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> v&lt;a.v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;s[<span class="number">100</span>];</span><br></pre></td></tr></table></figure>
+<p>若对s结构体数组赋值后排序，则从左到右v依次增大<br>可以理解为<code>v</code>代表左边那个,以参数形式传入的<code>a.v</code>代表右边那个，执行完排序之后，结构体中相邻两个元素满足<code>return</code>中的条件，上面的代码可以理解为排序之后<code>左边的v&lt;右边的v</code></p>
+</li>
+</ul>
+</li>
+<li><h1 id="set"><a href="#set" class="headerlink" title="set"></a>set</h1><ul>
+<li><p>C++的set是利用平衡二叉树实现的一个容器，具有以下特点</p>
+<ol>
+<li>对于插入、删除和查找操作,set保证其时间复杂度都是$O(\log_2n)$（n是set中元素的个数）。</li>
+<li>set是一个有序的、可以前向和后向遍历的容器（双向迭代器）。</li>
+<li>set的元素可以插入、删除，但是不可更改。</li>
+<li>set中的元素不可重复。</li>
+</ol>
+<p>至于具体的原理去学习一下二叉排序树和平衡二叉树就会了解了</p>
+</li>
+<li><p>插入</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.insert();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>删除</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.erase();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>判断是否存在</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.count();</span><br></pre></td></tr></table></figure>
+<p><code>count()</code>本来是STL中用来判断某个元素出现多少次的函数，由于set中元素不能重复，返回值为0或1。</p>
+</li>
+</ul>
+</li>
+<li><p>遍历</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)</span><br><span class="line">        s.insert(i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">std</span>::<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it=s.begin();it!=s.end();++it)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*it&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>C++11的新语法遍历（Range-based for loop）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)</span><br><span class="line">        s.insert(i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;v:s)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;v&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出均为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2 3 4 5 6 7 8 9</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>反向遍历</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;++i)</span><br><span class="line">        s.insert(i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="built_in">std</span>::<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::reverse_iterator rit=s.rbegin();rit!=s.rend();++rit)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*rit&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>遍历删除</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it=s.begin();it!=s.end();)</span><br><span class="line">    s.erase(it++);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>选择性遍历删除</p>
+<ul>
+<li><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;::iterator it=s.begin();it!=s.end();)</span><br><span class="line"> <span class="keyword">if</span>((*it)%<span class="number">2</span>)</span><br><span class="line">     s.erase(it++);</span><br><span class="line"><span class="keyword">else</span> it++;</span><br></pre></td></tr></table></figure>
+<p>删除set中的奇数</p>
+</li>
+</ul>
+</li>
+<li><p>设置排序优先级</p>
+<ul>
+<li><p>int或long long</p>
+<ul>
+<li><p>默认从小到大<br>使用</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> &lt;<span class="keyword">int</span>, greater&lt;<span class="keyword">int</span>&gt; &gt; setTest;</span><br></pre></td></tr></table></figure>
+<p>可以从大到小排序（可以理解为左边的大，所以叫greater)</p>
+</li>
+</ul>
+</li>
+<li>结构体使用上文说的重载运算符来设置排序优先级</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><ul>
+<li><h2 id="c-11新语法遍历"><a href="#c-11新语法遍历" class="headerlink" title="c++11新语法遍历"></a>c++11新语法遍历</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> &amp;kv:a)</span><br><span class="line">&#123;   </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.first;    </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;kv.second;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h2 id="普通遍历"><a href="#普通遍历" class="headerlink" title="普通遍历"></a>普通遍历</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> it = num_map.begin(); it != num_map.end(); ++it) &#123;</span><br><span class="line">       <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="string">", "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h1 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h1><ul>
+<li><h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>排序方法与set相同，但使用<code>.top()</code>函数时返回的是<strong>最右边</strong>的元素。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, <span class="built_in">std</span>::greater&lt;<span class="keyword">int</span>&gt; &gt;</span><br></pre></td></tr></table></figure>
+<p>默认同样是左小右大，当需要左大右小是使用上面的语法。</p>
+</li>
+<li><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.top();</span><br><span class="line">.push();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/教学计划编制问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1058,131 +1732,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/少年易老学难成，一寸光阴不可轻/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="李聪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="李聪的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/少年易老学难成，一寸光阴不可轻/" itemprop="url">少年易老学难成，一寸光阴不可轻</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-21T09:17:41+08:00">
-                2017-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <img src="/少年易老学难成，一寸光阴不可轻/1.jpg">
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1228,7 +1782,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1250,7 +1804,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
