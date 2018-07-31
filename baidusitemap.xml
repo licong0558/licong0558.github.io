@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://licong0558.github.io/HDU-6319/</loc>
+    <lastmod>2018-07-31T00:36:42.041Z</lastmod>
+    <data>
+        <display>
+        <title>HDU-6319</title>
+        <pubTime>2018-07-30T12:53:56.000Z</pubTime>
+        
+        <tag>单调队列</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://licong0558.github.io/HDU-58699/</loc>
     <lastmod>2018-07-22T00:39:57.403Z</lastmod>
     <data>
@@ -632,9 +649,9 @@
         <title>Codeforces -908D</title>
         <pubTime>2018-03-18T13:09:26.000Z</pubTime>
         
-        <tag>思维</tag>
-         
         <tag>DP</tag>
+         
+        <tag>思维</tag>
          
         <tag>概率期望</tag>
          
