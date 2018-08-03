@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="思维," />
+  <meta name="keywords" content="DP," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题解对这种带取整的式子，要考虑是不是很多情况取整后都是一样的值，此题$$\lceil log_pa \rceil=i\qquad p^{i-1}&amp;lt;a\le p^i$$由于$a\le 1e9$ $i$最大的取值为$30$，排序预处理出前缀和，对每个p二分即可 代码123456789101112131415161718192021222324252627282930313233343536373">
-<meta name="keywords" content="思维">
+<meta name="description" content="思路跟博客的上一题有些类似，都是对区间排序，然后去维护最靠右的位置。$DP[i][j]$表示处理完第$i$个区间后，得到的值为$j$的区间最右边的位置。因为区间按左端点排序，所以之前处理出的区间的左端点一定$\le$当前区间左端点，所以可以按下式进行DP。12345if (j&amp;gt;=query[i].v &amp;amp;&amp;amp; dp[pre][j-query[i].v]&amp;gt;=query[i].">
+<meta name="keywords" content="DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZOJ-4029">
-<meta property="og:url" content="https://licong0558.github.io/ZOJ-4029/index.html">
+<meta property="og:title" content="Codeforces-981E">
+<meta property="og:url" content="https://licong0558.github.io/Codeforces-981E/index.html">
 <meta property="og:site_name" content="李聪的博客">
-<meta property="og:description" content="题解对这种带取整的式子，要考虑是不是很多情况取整后都是一样的值，此题$$\lceil log_pa \rceil=i\qquad p^{i-1}&amp;lt;a\le p^i$$由于$a\le 1e9$ $i$最大的取值为$30$，排序预处理出前缀和，对每个p二分即可 代码123456789101112131415161718192021222324252627282930313233343536373">
+<meta property="og:description" content="思路跟博客的上一题有些类似，都是对区间排序，然后去维护最靠右的位置。$DP[i][j]$表示处理完第$i$个区间后，得到的值为$j$的区间最右边的位置。因为区间按左端点排序，所以之前处理出的区间的左端点一定$\le$当前区间左端点，所以可以按下式进行DP。12345if (j&amp;gt;=query[i].v &amp;amp;&amp;amp; dp[pre][j-query[i].v]&amp;gt;=query[i].">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-30T09:30:51.897Z">
+<meta property="og:updated_time" content="2018-08-03T10:46:13.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZOJ-4029">
-<meta name="twitter:description" content="题解对这种带取整的式子，要考虑是不是很多情况取整后都是一样的值，此题$$\lceil log_pa \rceil=i\qquad p^{i-1}&amp;lt;a\le p^i$$由于$a\le 1e9$ $i$最大的取值为$30$，排序预处理出前缀和，对每个p二分即可 代码123456789101112131415161718192021222324252627282930313233343536373">
+<meta name="twitter:title" content="Codeforces-981E">
+<meta name="twitter:description" content="思路跟博客的上一题有些类似，都是对区间排序，然后去维护最靠右的位置。$DP[i][j]$表示处理完第$i$个区间后，得到的值为$j$的区间最右边的位置。因为区间按左端点排序，所以之前处理出的区间的左端点一定$\le$当前区间左端点，所以可以按下式进行DP。12345if (j&amp;gt;=query[i].v &amp;amp;&amp;amp; dp[pre][j-query[i].v]&amp;gt;=query[i].">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://licong0558.github.io/ZOJ-4029/"/>
+  <link rel="canonical" href="https://licong0558.github.io/Codeforces-981E/"/>
 
 
 
 
 
-  <title>ZOJ-4029 | 李聪的博客</title>
+  <title>Codeforces-981E | 李聪的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/ZOJ-4029/">
+    <link itemprop="mainEntityOfPage" href="https://licong0558.github.io/Codeforces-981E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="李聪">
@@ -270,7 +270,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ZOJ-4029</h2>
+          <h2 class="post-title" itemprop="name headline">Codeforces-981E</h2>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T17:15:06+08:00">
-                2018-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T18:31:10+08:00">
+                2018-08-03
               </time>
             
 
@@ -292,28 +292,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ACM/" itemprop="url" rel="index">
-                    <span itemprop="name">ACM</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -347,8 +325,9 @@
       
 
       
-        <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>对这种带取整的式子，要考虑是不是很多情况取整后都是一样的值，此题<br>$$\lceil log_pa \rceil=i\qquad p^{i-1}&lt;a\le p^i$$<br>由于$a\le 1e9$ $i$最大的取值为$30$，排序预处理出前缀和，对每个p二分即可</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">5e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">const</span> ll MOD=<span class="number">1e9</span>;</span><br><span class="line">ll a[MAXN],sum[<span class="number">31</span>][MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen("input.txt","r",stdin);</span></span><br><span class="line">    ll T_T;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;T_T;</span><br><span class="line">    <span class="keyword">while</span>(T_T--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll n,m;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        a[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">31</span>;++i)</span><br><span class="line">            sum[i][<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="number">31</span>;++j)</span><br><span class="line">                sum[j][i]=sum[j][i<span class="number">-1</span>]+a[i]/j;</span><br><span class="line">        &#125;</span><br><span class="line">        ll out=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            ll p;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;p);</span><br><span class="line">            ll pp=p;</span><br><span class="line">            ll lastp=<span class="number">0</span>;</span><br><span class="line">            ll curans=<span class="number">0</span>;</span><br><span class="line">            <span class="comment">//printf("p==%lld\n",p);</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;<span class="number">31</span>;pp*=p,j++)</span><br><span class="line">            &#123;</span><br><span class="line">                ll curp=upper_bound(a,a+n+<span class="number">1</span>,pp)-a<span class="number">-1</span>;</span><br><span class="line">                <span class="comment">//printf("    pp==%lld curp==%lld\n",pp,curp);</span></span><br><span class="line">                curans=(curans+sum[j][curp]-sum[j][lastp])%MOD;</span><br><span class="line">                lastp=curp;</span><br><span class="line">                <span class="keyword">if</span>(pp&gt;=a[n])</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            curans=curans*i%MOD;</span><br><span class="line">            out=(out+curans)%MOD;</span><br><span class="line">            <span class="comment">//printf("%lld\n",out);</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,out);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>跟博客的上一题有些类似，都是对区间排序，然后去维护最靠右的位置。<br>$DP[i][j]$表示处理完第$i$个区间后，得到的值为$j$的区间最右边的位置。<br>因为区间按左端点排序，所以之前处理出的区间的左端点一定$\le$当前区间左端点，所以可以按下式进行DP。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (j&gt;=query[i].v &amp;&amp; dp[pre][j-query[i].v]&gt;=query[i].l) &#123;</span><br><span class="line">    dp[cur][j]=max(dp[pre][j],min(dp[pre][j-query[i].v],query[i].r));</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    dp[cur][j]=dp[pre][j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种从左往右处理的问题有一点贪心的思路，只保留最右边的那一个。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//8 3</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll MAXN=<span class="number">1e4</span>+<span class="number">100</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">st</span> &#123;</span></span><br><span class="line">    ll l,r,v;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> st &amp;a)<span class="keyword">const</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> l&lt;a.l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;query[MAXN];</span><br><span class="line">ll dp[<span class="number">2</span>][MAXN],ans[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="comment">/* arguments */</span>)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">-1</span>,<span class="keyword">sizeof</span> dp);</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=MAXN;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</span><br><span class="line">    freopen(<span class="string">"input.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    freopen(<span class="string">"output.txt"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    ll n,ni;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;ni) &#123;</span><br><span class="line">        init();</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=ni;++i)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;query[i].l,&amp;query[i].r,&amp;query[i].v);</span><br><span class="line">        sort(query+<span class="number">1</span>,query+<span class="number">1</span>+ni);</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=ni;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            ll cur=i%<span class="number">2</span>,pre=(i+<span class="number">1</span>)%<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span>(ll j=<span class="number">0</span>;j&lt;=n;++j)</span><br><span class="line">                <span class="keyword">if</span> (j&gt;=query[i].v &amp;&amp; dp[pre][j-query[i].v]&gt;=query[i].l) &#123;</span><br><span class="line">                    dp[cur][j]=max(dp[pre][j],min(dp[pre][j-query[i].v],query[i].r));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[cur][j]=dp[pre][j];</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="comment">// for(ll j=0;j&lt;=n;++j)</span></span><br><span class="line">            <span class="comment">//     printf("%lld ",dp[cur][j]);</span></span><br><span class="line">            <span class="comment">// puts("");</span></span><br><span class="line">        &#125;</span><br><span class="line">        ll cnt=<span class="number">0</span>,cur=ni%<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">            <span class="keyword">if</span>(dp[cur][i]&gt;=<span class="number">0</span>)</span><br><span class="line">                ans[cnt++]=i;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,cnt);</span><br><span class="line">        <span class="keyword">for</span>(ll i=<span class="number">0</span>;i&lt;cnt;++i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%lld%c"</span>,ans[i],i==cnt<span class="number">-1</span>?<span class="string">'\n'</span>:<span class="string">' '</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,7 +345,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/思维/" rel="tag"># 思维</a>
+            <a href="/tags/DP/" rel="tag"># DP</a>
           
         </div>
       
@@ -379,8 +358,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Operation-System-1/" rel="next" title="Operation System 1">
-                <i class="fa fa-chevron-left"></i> Operation System 1
+              <a href="/HDU-6319/" rel="next" title="HDU-6319">
+                <i class="fa fa-chevron-left"></i> HDU-6319
               </a>
             
           </div>
@@ -388,10 +367,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018年湘潭大学程序设计竞赛-G-又见斐波那契/" rel="prev" title="2018年湘潭大学程序设计竞赛 G-又见斐波那契">
-                2018年湘潭大学程序设计竞赛 G-又见斐波那契 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -525,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
